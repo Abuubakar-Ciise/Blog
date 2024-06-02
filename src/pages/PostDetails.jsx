@@ -7,7 +7,20 @@ import { CgCalendarDates } from "react-icons/cg";
 import { LuNewspaper } from "react-icons/lu";
 import { ImParagraphJustify } from "react-icons/im";
 
-
+// const PostDate = ({ date }) => {
+//     const formattedDate = new Intl.DateTimeFormat('en-US', {
+//       year: 'numeric',
+//       month: 'long',
+//       day: 'numeric',
+//     }).format(new Date(date));
+  
+//     return (
+//       <div>
+       
+//         <h2>{formattedDate}</h2>
+//       </div>
+//     );
+//   };
 
 
 export const BlogContext = createContext();
@@ -16,7 +29,10 @@ const stripHtmlTags = (htmlString) => {
     const tempElement = document.createElement("div");
     tempElement.innerHTML = htmlString;
     return tempElement.textContent || tempElement.innerText || "";
+    
   };
+
+  
 
 const PostDetails = ()=>{
     
@@ -25,7 +41,8 @@ const PostDetails = ()=>{
     const[post , setPosts] = useState([])
     const[loading,setLoading] = useState(false)
     const[error,setError] = useState(null)
-    console.log("post",JSON.stringify(post))
+    // console.log("post",JSON.stringify(post))
+ 
 
     async function getPosts() {
         try {
@@ -62,6 +79,7 @@ const PostDetails = ()=>{
         );
     }
     
+    
 
     return (
        <div className="main-container">
@@ -77,10 +95,11 @@ const PostDetails = ()=>{
             <div className="main-Profile">
                 <div className="profile-details">
                 <IoPersonCircleOutline size={30} color="green"/> 
+                {/* <h2>{post.x_author}</h2> */}
                 <h2>Abuubakar Ciise</h2>
                 </div>
                 <div className="profile-date">
-                <CgCalendarDates size={25} color="green"/><h2>Oct 18 2002</h2>
+                <CgCalendarDates size={25} color="green"/><h2>{post?.x_date}</h2>
                 </div>
                 <div className="profile-news">
                 <LuNewspaper size={20} color="green"/><h2>News</h2>
