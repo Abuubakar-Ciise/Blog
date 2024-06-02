@@ -1,0 +1,18 @@
+.container{
+    /* border: 1px solid black; */
+    padding: 15px;
+    margin: 15px;
+}
+.error{
+    display: flex;
+    gap: 10px;
+}
+.error h1{
+    color: rgb(204, 14, 14);
+    font-size: 20px;
+}
+.error p{
+    color: rgb(253, 0, 0);
+
+    font-size: 20px;
+}
